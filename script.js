@@ -31,14 +31,10 @@ if (contactForm) {
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    const replyTo = contactForm.querySelector('#_replyto');
-    const emailField = contactForm.querySelector('#email');
-    if (replyTo && emailField) replyTo.value = emailField.value;
-
-    fetch(contactForm.action, {
+    fetch('/', {
       method: 'POST',
-      body: new FormData(contactForm),
-      headers: { 'Accept': 'application/json' }
+      body: new URLSearchParams(new FormData(contactForm)).toString(),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).then(response => {
       if (response.ok) {
         btn.textContent = 'Message Sent!';
