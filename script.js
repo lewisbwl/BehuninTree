@@ -21,41 +21,7 @@ nav.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Contact form handling via Formspree
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    fetch('/', {
-      method: 'POST',
-      body: new URLSearchParams(new FormData(contactForm)).toString(),
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-    }).then(response => {
-      if (response.ok) {
-        btn.textContent = 'Message Sent!';
-        btn.style.background = '#16a34a';
-        contactForm.reset();
-      } else {
-        btn.textContent = 'Error — Try Again';
-        btn.style.background = '#dc2626';
-      }
-    }).catch(() => {
-      btn.textContent = 'Error — Try Again';
-      btn.style.background = '#dc2626';
-    }).finally(() => {
-      btn.disabled = false;
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-      }, 3000);
-    });
-  });
-}
+// Contact form - let Netlify handle submission natively
 
 // Smooth reveal on scroll
 const observerOptions = {
