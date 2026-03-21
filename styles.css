@@ -240,7 +240,7 @@ h1, h2, h3, h4 {
   overflow: hidden;
   background-image:
     linear-gradient(135deg, rgba(15,61,21,0.88) 0%, rgba(10,46,16,0.82) 50%, rgba(6,31,9,0.9) 100%),
-    url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1600&h=900&fit=crop&crop=center');
+    url('all-jpgs/homepage-hero.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -420,7 +420,7 @@ h1, h2, h3, h4 {
   background: linear-gradient(135deg, var(--green-900) 0%, #0a2e10 50%, #061f09 100%);
   background-image:
     linear-gradient(135deg, rgba(15,61,21,0.92) 0%, rgba(10,46,16,0.88) 50%, rgba(6,31,9,0.94) 100%),
-    url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=1600&h=600&fit=crop&crop=bottom');
+    url('all-jpgs/homepage-hero.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -652,7 +652,7 @@ h1, h2, h3, h4 {
 .cta-banner {
   background:
     linear-gradient(135deg, rgba(26,92,36,0.92), rgba(15,61,21,0.95)),
-    url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1600&h=500&fit=crop&crop=center');
+    url('all-jpgs/services-hero.jpg');
   background-size: cover;
   background-position: center;
   padding: 80px 0;
