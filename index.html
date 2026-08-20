@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Behunin Tree Services & Horticulture | Utah's Leader in Tree Services</title>
   <meta name="description" content="Behunin Tree Services & Horticulture — Utah's leader in tree care since 1943. Certified arborists providing tree pruning, removal, healthcare, landscaping, and more.">
+
+  <!-- Preload LCP hero image (responsive) -->
+  <link rel="preload" as="image" type="image/webp"
+        href="img/homepage-hero-800.webp"
+        imagesrcset="img/homepage-hero-800.webp 800w, img/homepage-hero-1920.webp 1920w"
+        imagesizes="100vw"
+        fetchpriority="high">
+
+  <!-- Fonts: preconnect + preload; script.js appends the stylesheet asynchronously -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap">
+  <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"></noscript>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -84,7 +97,12 @@
           <a href="#contact" class="btn">Contact Us Today</a>
         </div>
         <div class="col-image about-image">
-          <img src="all-jpgs/christmas-lights-history-01.jpg" alt="Historic photo of Behunin worker stringing lights at Temple Square" class="section-img">
+          <picture>
+            <source type="image/webp" srcset="img/christmas-lights-history-01.webp">
+            <img src="img/christmas-lights-history-01.jpg"
+                 alt="Historic photo of Behunin worker stringing lights at Temple Square"
+                 class="section-img" width="320" height="261" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
     </div>
@@ -102,7 +120,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c-1.5 2-4 4-4 7a4 4 0 008 0c0-3-2.5-5-4-7z"/><path d="M12 14v7"/><path d="M9 21h6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c-1.5 2-4 4-4 7a4 4 0 008 0c0-3-2.5-5-4-7z"/><path d="M12 14v7"/><path d="M9 21h6"/></svg>
           </div>
           <h3>Tree & Plant Healthcare</h3>
           <p>Diagnose plant problems correctly and prescribe effective treatment programs with over 75 years of experience.</p>
@@ -110,7 +128,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 21h8m-4-4v4m-5-8l5-9 5 9"/><path d="M4 13h16"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 21h8m-4-4v4m-5-8l5-9 5 9"/><path d="M4 13h16"/></svg>
           </div>
           <h3>Tree Pruning & Trimming</h3>
           <p>Correct pruning following ANSI A300 standards with over 75 years of proper pruning experience.</p>
@@ -118,7 +136,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
           <h3>Tree Removal</h3>
           <p>Professional removal without causing unnecessary damage to surrounding vegetation or structures.</p>
@@ -126,7 +144,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c4 4 7 6 7 10a7 7 0 01-14 0c0-4 3-6 7-10z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3c4 4 7 6 7 10a7 7 0 01-14 0c0-4 3-6 7-10z"/></svg>
           </div>
           <h3>Landscape Planning & Design</h3>
           <p>We consider hydration, water flow, shading, and the best plants for your property.</p>
@@ -134,7 +152,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
           </div>
           <h3>Holiday & Event Lighting</h3>
           <p>The ones that started holiday lighting in Utah — from Temple Square to the 2002 Winter Olympics.</p>
@@ -142,7 +160,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
           </div>
           <h3>Outdoor Living Spaces</h3>
           <p>Pools, rock walls, pavers, kitchens, and outdoor BBQs to create your dream outdoor space.</p>
@@ -174,7 +192,18 @@
           </div>
         </div>
         <div class="col-image arborist-image">
-          <img src="all-jpgs/arborist-tree-trimming-bucket-truck.jpg" alt="Certified arborist trimming a tree from a bucket truck" class="section-img">
+          <picture>
+            <source type="image/webp"
+                    srcset="img/arborist-tree-trimming-bucket-truck-410.webp 410w,
+                            img/arborist-tree-trimming-bucket-truck-820.webp 820w"
+                    sizes="(max-width: 768px) 100vw, 50vw">
+            <img src="img/arborist-tree-trimming-bucket-truck-820.jpg"
+                 srcset="img/arborist-tree-trimming-bucket-truck-410.jpg 410w,
+                         img/arborist-tree-trimming-bucket-truck-820.jpg 820w"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 alt="Certified arborist trimming a tree from a bucket truck"
+                 class="section-img" width="820" height="547" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
     </div>
@@ -195,13 +224,13 @@
   </section>
 
   <!-- Canopy Session CTA -->
-  <section class="section canopy-cta" style="background: #fafaf9;">
-    <div class="container" style="text-align: center; max-width: 750px;">
-      <blockquote style="background: var(--green-50); border-left: 4px solid var(--green-600); padding: 1.5rem 2rem; border-radius: var(--radius); margin-bottom: 2.5rem; text-align: left; font-style: italic; color: var(--stone-700); line-height: 1.8;">
+  <section class="section canopy-cta">
+    <div class="container canopy-inner">
+      <blockquote class="canopy-quote">
         "A moderate canopy reduction can lower whole-tree water use by roughly 30%, and heavier live-crown pruning has been shown to reduce water use by 39–59% immediately after pruning."
       </blockquote>
       <h2>Want a Healthier, Safer Tree That Uses Less Water?</h2>
-      <p style="margin-bottom: 2rem;">Schedule a canopy session with Behunin Tree. Our certified arborists will evaluate your trees and develop a custom care plan to improve their health, structural safety, and water efficiency.</p>
+      <p class="canopy-desc">Schedule a canopy session with Behunin Tree. Our certified arborists will evaluate your trees and develop a custom care plan to improve their health, structural safety, and water efficiency.</p>
       <a href="#contact" class="btn">Schedule a Canopy Session</a>
     </div>
   </section>
@@ -215,22 +244,40 @@
       </div>
       <div class="videos-grid">
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/Wlui0Yz3RxI" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="Wlui0Yz3RxI" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/Wlui0Yz3RxI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/vTKrvCnYVsA" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="vTKrvCnYVsA" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/vTKrvCnYVsA/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/L1S1U7MrhV4" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="L1S1U7MrhV4" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/L1S1U7MrhV4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/Qgtbas8K6gI" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="Qgtbas8K6gI" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/Qgtbas8K6gI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/2xZCDJgbU5U" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="2xZCDJgbU5U" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/2xZCDJgbU5U/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
         <div class="video-short">
-          <iframe src="https://www.youtube.com/embed/pQglUbuRijQ" title="Behunin Tree Short" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <button type="button" class="yt-facade" data-id="pQglUbuRijQ" aria-label="Play Behunin Tree video">
+            <img src="https://i.ytimg.com/vi/pQglUbuRijQ/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="yt-play" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </div>
@@ -247,21 +294,21 @@
 
           <div class="contact-info">
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
               <div>
                 <strong>Phone</strong>
                 <a href="tel:8019698381">(801) 969-8381</a>
               </div>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <div>
                 <strong>Address</strong>
                 <span>2247 West 6200 South<br>Salt Lake City, UT 84129</span>
               </div>
             </div>
             <div class="contact-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
               <div>
                 <strong>Hours</strong>
                 <span>Mon – Fri: 9:00 AM – 5:00 PM<br>Sat & Sun: Closed</span>
@@ -275,16 +322,16 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your name">
+                <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
               </div>
               <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="(801) 555-0000">
+                <input type="tel" id="phone" name="phone" placeholder="(801) 555-0000" autocomplete="tel">
               </div>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="you@example.com">
+              <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
             </div>
             <div class="form-group">
               <label for="service">Service Interested In</label>
@@ -325,7 +372,7 @@
         <p class="footer-desc">Utah's leader in tree services since 1943. Three generations of certified arborists providing expert tree care along the Wasatch Front.</p>
       </div>
       <div class="footer-links">
-        <h4>Quick Links</h4>
+        <h3>Quick Links</h3>
         <a href="/">Home</a>
         <a href="/#about">About Us</a>
         <a href="services.html">Services</a>
@@ -334,7 +381,7 @@
         <a href="/#contact">Contact</a>
       </div>
       <div class="footer-links">
-        <h4>Top Services</h4>
+        <h3>Top Services</h3>
         <a href="services.html">Tree Healthcare</a>
         <a href="services.html">Tree Pruning</a>
         <a href="services.html">Tree Removal</a>
@@ -342,7 +389,7 @@
         <a href="services.html">Holiday Lighting</a>
       </div>
       <div class="footer-links">
-        <h4>Contact</h4>
+        <h3>Contact</h3>
         <a href="tel:8019698381">(801) 969-8381</a>
         <span>2247 W 6200 S<br>Salt Lake City, UT 84129</span>
         <span>Mon–Fri 9AM–5PM</span>
@@ -355,6 +402,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
