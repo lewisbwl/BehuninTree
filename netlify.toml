@@ -1,0 +1,10 @@
+# Netlify runs build.js against its own fresh clone, then publishes the repo
+# root. build.js inlines styles.css into each page to remove the last
+# render-blocking request. See the comment header in build.js for details.
+#
+# If the build ever fails, Netlify keeps serving the previous successful
+# deploy rather than publishing a broken site.
+
+[build]
+  command = "node build.js"
+  publish = "."
