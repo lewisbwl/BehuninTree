@@ -279,7 +279,10 @@ h1, h2, h3, h4 {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 120px 0 80px;
+  /* Only set vertical padding — .container supplies the 24px side gutters.
+     A `padding` shorthand here would zero them out and push text to the edge. */
+  padding-top: 120px;
+  padding-bottom: 80px;
   max-width: 680px;
 }
 
@@ -943,7 +946,8 @@ h1, h2, h3, h4 {
   }
 
   .hero-content {
-    padding: 100px 0 60px;
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 
   .trust-inner {
