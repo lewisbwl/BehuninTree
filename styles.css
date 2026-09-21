@@ -1259,3 +1259,45 @@ h1, h2, h3, h4 {
 }
 .history-content li { margin-bottom: 0.75rem; }
 .history-content h3 { margin: 2.5rem 0 1rem; }
+
+/* Collapse the nav to the menu button below 1025px. With History added there are
+   nine links plus the call button, which overflowed the header from 769px up. */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--stone-200);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
