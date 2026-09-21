@@ -1242,3 +1242,20 @@ h1, h2, h3, h4 {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
+
+
+/* History article: readable source links and lists, scoped to this page. */
+.history-content a:not(.btn) {
+  color: var(--green-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.history-content a:not(.btn):hover { color: var(--green-900); }
+.history-content ul,
+.history-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.history-content li { margin-bottom: 0.75rem; }
+.history-content h3 { margin: 2.5rem 0 1rem; }
