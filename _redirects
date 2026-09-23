@@ -3,4 +3,6 @@
 # netlify.toml sets publish = "." and therefore serves the whole repo root.
 # 410 (Gone) rather than 404 so crawlers drop the URLs permanently.
 # The files remain in git; they are the source material for upcoming service pages.
-/all-jpgs/*    /410.html    410
+# The trailing ! forces this rule. Without it Netlify serves the real file that
+# exists at the path and never evaluates the redirect.
+/all-jpgs/*    /410.html    410!
