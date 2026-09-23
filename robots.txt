@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# OpenAI's search crawler is separate from GPTBot. Allowing it keeps the site
+# eligible to be cited as a source in ChatGPT search results.
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://behunintree.com/sitemap.xml
