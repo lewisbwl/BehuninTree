@@ -1,0 +1,6 @@
+# all-jpgs/ holds 245 unoptimized source photos. Only the derivatives in img/ are
+# referenced by any page. The directory shipped publicly only because
+# netlify.toml sets publish = "." and therefore serves the whole repo root.
+# 410 (Gone) rather than 404 so crawlers drop the URLs permanently.
+# The files remain in git; they are the source material for upcoming service pages.
+/all-jpgs/*    /410.html    410
