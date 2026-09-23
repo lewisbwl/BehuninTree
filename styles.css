@@ -56,6 +56,26 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
+/* ===== Content guards =====
+   These exist so that pasted content cannot break layout, rather than being
+   forbidden from doing so. Nobody has to notice or enforce anything. */
+
+/* A bare 70-character URL used to force horizontal scroll. This was fixed once,
+   scoped to .history-content only; applied globally it cannot recur anywhere. */
+body {
+  overflow-wrap: break-word;
+}
+
+/* The universal margin:0 reset means a pasted heading collides with the text
+   above it. Give headings inside prose a default rhythm so any heading level,
+   typed by anyone, lands correctly spaced. */
+.col-text h2, .col-text h3,
+.article-content h2, .article-content h3,
+.section p + h2, .section p + h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -626,6 +646,7 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--stone-200);
   transition: all 0.3s;
+  overflow: hidden;
 }
 
 .service-card:hover {
@@ -662,6 +683,12 @@ h1, h2, h3, h4 {
   font-size: 0.9rem;
   color: var(--stone-500);
   line-height: 1.7;
+  /* Grid rows size to their tallest item, so one long paste here would stretch
+     every sibling card and push the contact form off the page. Clamp instead. */
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ========== Credentials ========== */
