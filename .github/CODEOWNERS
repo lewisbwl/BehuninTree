@@ -1,0 +1,36 @@
+# Code ownership for behunintree.com
+#
+# The ruleset on main has require_code_owner_review enabled, so a PR touching
+# any path owned here cannot merge without review from that owner.
+#
+# Ben has write access because personal (non-organization) GitHub repos offer
+# exactly one collaborator level. This file is how the content-vs-code line is
+# drawn in a repo that cannot express it as a permission.
+
+# Default: everything belongs to Blake unless carved out below.
+*                       @lewisbwl
+
+# Structure, styling, behavior, and build. This is the line crossed in PR #2,
+# which touched styles.css alongside its content changes.
+/*.html                 @lewisbwl
+/styles.css             @lewisbwl
+/script.js              @lewisbwl
+/build.js               @lewisbwl
+
+# Deploy and security configuration. The strict CSP here is what keeps pasted
+# markup from becoming executable, so it is not a content decision.
+/netlify.toml           @lewisbwl
+/_headers               @lewisbwl
+/_redirects             @lewisbwl
+/robots.txt             @lewisbwl
+/sitemap.xml            @lewisbwl
+/.github/               @lewisbwl
+
+# Optimized image derivatives are generated, not authored. Source photos are
+# reviewed before they become derivatives.
+/img/                   @lewisbwl
+
+# Once the generator exists, content/ is where Ben works and this becomes the
+# one path he owns outright. Left commented until that directory is real, so
+# the rule cannot silently match nothing.
+# /content/             @bensbehunin @lewisbwl
