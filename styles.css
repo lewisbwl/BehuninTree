@@ -1364,7 +1364,9 @@ body {
 }
 
 .answers-toc-link:hover { background: var(--white); border-color: var(--green-500); }
-.answers-toc-link span { color: var(--stone-500); font-weight: 500; }
+/* stone-500 on the green-50 pill measures 4.46:1, just under the 4.5:1 AA
+   threshold at this size. stone-700 is 9.5:1 and still reads as secondary. */
+.answers-toc-link span { color: var(--stone-700); font-weight: 500; }
 
 .answers-cat { margin-bottom: 56px; scroll-margin-top: 90px; }
 
