@@ -146,6 +146,7 @@ body {
   color: var(--stone-700);
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -173,6 +174,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   padding: 12px 28px;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -1287,9 +1289,13 @@ body {
 .history-content li { margin-bottom: 0.75rem; }
 .history-content h3 { margin: 2.5rem 0 1rem; }
 
-/* Collapse the nav to the menu button below 1025px. With History added there are
-   nine links plus the call button, which overflowed the header from 769px up. */
-@media (max-width: 1024px) {
+/* Collapse the nav to the menu button below 1200px.
+   Measured: nine links plus the call button need 1184px of header to sit on one
+   line. The previous 1024px breakpoint left 1025-1183px showing a nav that did
+   not fit, so "Certified Arborist" and the call button each wrapped to two
+   lines. white-space: nowrap above prevents the wrap; this prevents the overlap
+   that a nowrap alone would cause instead. */
+@media (max-width: 1199px) {
   .nav {
     display: none;
     position: absolute;
