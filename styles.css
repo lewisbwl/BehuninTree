@@ -1328,3 +1328,120 @@ body {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+/* ========== Expert Answers (/answers) ==========
+   Native <details> accordions: no JavaScript, keyboard accessible, and every
+   answer stays in the HTML so crawlers and the FAQPage schema both see it. */
+.answers-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 56px;
+}
+
+.answers-toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--green-50);
+  color: var(--green-800);
+  border: 1px solid rgba(29,107,40,0.15);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.answers-toc-link:hover { background: var(--white); border-color: var(--green-500); }
+.answers-toc-link span { color: var(--stone-500); font-weight: 500; }
+
+.answers-cat { margin-bottom: 56px; scroll-margin-top: 90px; }
+
+.answers-cat h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  margin-bottom: 6px;
+}
+
+.answers-cat-desc {
+  color: var(--stone-500);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.qa {
+  border: 1px solid var(--stone-200);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  background: var(--white);
+  scroll-margin-top: 90px;
+  overflow: hidden;
+}
+
+.qa[open] { border-color: var(--green-500); box-shadow: var(--shadow-sm); }
+
+.qa summary {
+  cursor: pointer;
+  padding: 18px 52px 18px 20px;
+  position: relative;
+  list-style: none;
+}
+
+/* Hide the platform disclosure triangle; a custom chevron replaces it. */
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::marker { content: ""; }
+
+.qa summary h3 {
+  display: inline;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--stone-900);
+  line-height: 1.5;
+}
+
+.qa summary::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  top: 24px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--green-700);
+  border-bottom: 2px solid var(--green-700);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+.qa[open] summary::after { transform: rotate(-135deg); top: 28px; }
+.qa summary:hover h3 { color: var(--green-800); }
+.qa summary:focus-visible { outline: 3px solid var(--green-500); outline-offset: -3px; }
+
+.qa-body { padding: 0 20px 20px; }
+.qa-body p { margin-bottom: 14px; color: var(--stone-700); }
+.qa-body p:last-child { margin-bottom: 0; }
+
+.qa-body ul {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: var(--stone-700);
+}
+
+.qa-body li { margin-bottom: 5px; }
+
+.qa-related {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--stone-200);
+  font-size: 0.88rem;
+  color: var(--stone-500);
+}
+
+.qa-related strong { color: var(--stone-700); }
+
+@media (max-width: 768px) {
+  .answers-toc { gap: 8px; margin-bottom: 40px; }
+  .answers-toc-link { font-size: 0.8rem; padding: 7px 13px; }
+  .qa summary { padding: 16px 44px 16px 16px; }
+  .qa-body { padding: 0 16px 16px; }
+}
