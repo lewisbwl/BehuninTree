@@ -73,16 +73,20 @@ const pages = fs.readdirSync(ROOT).filter((f) => f.endsWith('.html')).sort();
 if (pages.length === 0) fail('no .html files found to build');
 
 let inlined = 0;
-let skipped = 0;
 
 for (const page of pages) {
   const file = path.join(ROOT, page);
   const html = fs.readFileSync(file, 'utf8');
 
+  // A page arriving with CSS already inlined means a previous build's output
+  // was committed. Skipping here is what froze the site once: build.js quietly
+  // skipped 8 of 9 pages, so every styles.css edit stopped reaching production
+  // while the build still reported success. Fail loudly instead.
   if (html.includes(MARKER)) {
-    console.log(`[build]  skip   ${page} (already inlined)`);
-    skipped++;
-    continue;
+    fail(`${page} already contains inlined CSS, which means build output was ` +
+         `committed to the repo. This page would be SKIPPED and its styles ` +
+         `frozen at whatever styles.css looked like when it was committed.\n` +
+         `  Fix: git checkout -- '*.html'   (then commit before running this again)`);
   }
 
   if (!html.includes(LINK_TAG)) {
@@ -98,6 +102,6 @@ for (const page of pages) {
 }
 
 console.log(
-  `\n[build] done: ${inlined} inlined, ${skipped} skipped, ` +
+  `\n[build] done: ${inlined} inlined, ` +
   `${(css.length / 1024).toFixed(1)} KiB CSS, ${rewritten} url() paths made absolute\n`
 );
