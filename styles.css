@@ -137,7 +137,11 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  /* 28px rather than 32px. Nine links plus the call button need 957px of
+     content; at a 32px gap the row required a 1208px viewport, which would sit
+     just above the 1199px collapse breakpoint and leave a dead zone where the
+     nav shows but cannot fit. Nine gaps x 4px buys back 36px. */
+  gap: 28px;
 }
 
 .nav-link {
